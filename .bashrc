@@ -127,9 +127,6 @@ export PATH=$PATH:$HOME/bin
 # ls colors
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
-# linuxbrew
-test -f /home/linuxbrew/.linuxbrew/bin/brew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
 # awless
 which awless >& /dev/null
 if [ $? -eq 0 ]; then

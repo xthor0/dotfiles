@@ -203,59 +203,6 @@ ac_connected_cmd =
 ac_disconnected_cmd = 
 
 #-------------------------------------
-# Separator 1
-separator = new
-separator_background_id = 2
-separator_color = #131c26 30
-separator_style = line
-separator_size = 2
-separator_padding = 0 8
-
-#-------------------------------------
-# Executor 1
-execp = new
-execp_command = now-playing -i
-execp_interval = 4
-execp_has_icon = 0
-execp_cache_icon = 1
-execp_continuous = 0
-execp_markup = 1
-execp_lclick_command = 
-execp_rclick_command = 
-execp_mclick_command = 
-execp_uwheel_command = 
-execp_dwheel_command = 
-execp_font = Noto Sans 8
-execp_font_color = #a1a8b9 69
-execp_padding = 8 0
-execp_background_id = 0
-execp_centered = 0
-execp_icon_w = 0
-execp_icon_h = 0
-
-#-------------------------------------
-# Executor 2
-execp = new
-execp_command = echo "fixme - weather"
-execp_interval = 1800
-execp_has_icon = 0
-execp_cache_icon = 1
-execp_continuous = 0
-execp_markup = 1
-execp_lclick_command = 
-execp_rclick_command = 
-execp_mclick_command = 
-execp_uwheel_command = 
-execp_dwheel_command = 
-execp_font = Noto Sans 8
-execp_font_color = #131c26 100
-execp_padding = 8 0
-execp_background_id = 2
-execp_centered = 0
-execp_icon_w = 0
-execp_icon_h = 0
-
-#-------------------------------------
 # Tooltip
 tooltip_show_timeout = 0
 tooltip_hide_timeout = 0

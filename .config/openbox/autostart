@@ -23,7 +23,10 @@ sleep 2 && conky &
 xinput set-prop 12 "libinput Click Method Enabled" 0 1
 
 # screen locker
-exec xautolock -time 15 -locker '~/bin/i3lock-fancy-rapid 10 10' &
+exec xautolock -time 15 -locker ~/bin/lockscreen.sh &
+
+# notify me about updates
+dnfdragora-updater &
 
 # power management, which really just gives us battery status
 # xscreensaver is handling the power management of the monitors for me

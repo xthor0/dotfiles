@@ -427,12 +427,12 @@
     <!-- docking and undocking, I imagine this will need adjusting! -->
     <keybind key="C-S-u">
       <action name="Execute">
-        <command>xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --primary --output DP1 --off --output DP2 --off --output VIRTUAL1 --off</command>
+        <command>~/bin/undock.sh</command>
       </action>
     </keybind>
     <keybind key="C-S-d">
       <action name="Execute">
-        <command>xrandr --output eDP1 --off --output DP1 --primary --mode 3840x2160 --pos 0x0 --rotate normal --output DP2 --mode 3840x2160 --pos 3840x0 --rotate normal --output VIRTUAL1 --off</command>
+        <command>~/bin/dock.sh</command>
       </action>
     </keybind>
     <!-- Keybindings for window tiling -->
@@ -959,6 +959,13 @@
     </application>
     <application class="Gimp" name="gimp-2.8" role="gimp-image-window" type="normal">
       <position force="no">
+        <x>center</x>
+        <y>center</y>
+      </position>
+    </application>
+    <!-- virtualbox has been moving the damn VM windows all over the screen, will this fix it? -->
+    <application class="VirtualBox Machine">
+      <position force="yes">
         <x>center</x>
         <y>center</y>
       </position>

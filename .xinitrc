@@ -1,4 +1,4 @@
 #!/bin/bash
-xrdb -merge ~/.Xresources
+[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 eval $(ssh-agent)
 exec openbox-session

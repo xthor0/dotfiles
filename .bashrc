@@ -122,7 +122,7 @@ export GIT_PS1_HIDE_IF_PWD_IGNORED=true
 export GIT_PS1_SHOWCOLORHINTS=true
 
 # path
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 
 # ls colors
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx

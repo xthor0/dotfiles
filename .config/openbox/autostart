@@ -5,11 +5,17 @@ if which dbus-launch >/dev/null && test -z "${DBUS_SESSION_BUS_ADDRESS}"; then
   eval $(dbus-launch --sh-syntax --exit-with-session)
 fi
 
+# without this, I get errors using lxsession-logout
+lxpolkit &
+
 # necessary if we want notifications from libnotify
 /usr/lib64/xfce4/notifyd/xfce4-notifyd &
 
 # restore background
 nitrogen --restore &
+
+# launch pcmanfm in daemon mode
+pcmanfm -d &
 
 # compositor for tear-free windows and some basic effects
 compton -b

@@ -18,6 +18,7 @@
     cursor_color = "#aaaaaa"
     font = Terminus (TTF) Medium 12
     foreground_color = "#ffffff"
+    login_shell = True
     scrollback_infinite = True
     scrollbar_position = hidden
     use_system_font = False

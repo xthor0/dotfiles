@@ -13,7 +13,13 @@ lxpolkit &
 # replaced by dunst
 
 # restore background
-nitrogen --restore &
+#nitrogen --restore &
+
+# THIS NEEDS WORK
+xrandr -q | grep -q ^DP-2-1
+if [ $? -eq 0 ]; then
+  ${HOME}/bin/dock.sh
+fi
 
 # launch pcmanfm in daemon mode
 pcmanfm -d &

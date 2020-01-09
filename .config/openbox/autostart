@@ -9,7 +9,8 @@ fi
 lxpolkit &
 
 # necessary if we want notifications from libnotify
-/usr/lib64/xfce4/notifyd/xfce4-notifyd &
+#/usr/lib64/xfce4/notifyd/xfce4-notifyd &
+# replaced by dunst
 
 # restore background
 nitrogen --restore &
@@ -34,7 +35,7 @@ sleep 2 && conky &
 
 # fix touchpad so I can right-click with 2 fingers
 # you'll have to adjust the ID: xinput list | grep -i touchpad, find id for the one you want to tweak
-xinput set-prop 12 "libinput Click Method Enabled" 0 1
+xinput set-prop 11 "libinput Click Method Enabled" 0 1
 
 # screen locker
 exec xautolock -time 15 -locker ~/bin/lockscreen.sh &

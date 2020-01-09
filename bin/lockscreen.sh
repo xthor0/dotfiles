@@ -1,2 +1,2 @@
 #!/bin/bash
-exec ~/bin/i3lock-fancy-rapid 5 1
+exec ~/bin/i3lock-fancy-rapid 10 1

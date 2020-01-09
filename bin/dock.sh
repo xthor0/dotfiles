@@ -35,20 +35,16 @@ echo "You're docked at ${location}"
 
 if [ "${location}" == "HOME" ]; then
     xrandr --output eDP-1 --mode 1920x1080 --pos 0x1080 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --mode 3840x2160 --pos 5760x0 --rotate normal --output DP-1-1 --primary --mode 3840x2160 --pos 1920x0 --rotate normal --output DP-1-2 --off --output DP-1-3 --off
-
-    # not sure why the head value changes at home?
-    nitrogen --head=0 --set-centered ~/Pictures/hexagram1uhd.jpg 
-    nitrogen --head=1 --set-centered ~/Pictures/hexagram11080p.jpg 
-    nitrogen --head=2 --set-centered ~/Pictures/hexagram1uhd.jpg 
 fi
 
 if [ "${location}" == "WORK" ]; then
     xrandr --output eDP-1 --mode 1920x1080 --pos 0x1080 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --mode 3840x2160 --pos 5760x0 --rotate normal --output DP-1-1 --primary --mode 3840x2160 --pos 1920x0 --rotate normal --output DP-1-2 --off --output DP-1-3 --off
-
-    nitrogen --head=0 --set-centered ~/Pictures/hexagram11080p.jpg 
-    nitrogen --head=1 --set-centered ~/Pictures/hexagram1uhd.jpg 
-    nitrogen --head=2 --set-centered ~/Pictures/hexagram1uhd.jpg 
 fi
+
+# restore backgrounds
+nitrogen --head=0 --set-centered ~/Pictures/hexagram1uhd.jpg 
+nitrogen --head=1 --set-centered ~/Pictures/hexagram11080p.jpg 
+nitrogen --head=2 --set-centered ~/Pictures/hexagram1uhd.jpg 
 
 # move conky to the right head
 killall -SIGUSR1 conky

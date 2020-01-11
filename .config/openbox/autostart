@@ -46,6 +46,9 @@ xinput set-prop 11 "libinput Click Method Enabled" 0 1
 # screen locker
 exec xautolock -time 15 -locker ~/bin/lockscreen.sh &
 
+# ensures the screen locks after suspend (xautolock alone won't)
+xss-lock -- ${HOME}/bin/i3lock-fancy-rapid 10 1 &
+
 # notify me about updates
 dnfdragora-updater &
 
@@ -54,7 +57,7 @@ dnfdragora-updater &
 xfce4-power-manager &
 
 # bluetooth icon
-/bin/blueberry-tray &
+#/bin/blueberry-tray &
 
 # screen shot tool
 flameshot &

@@ -44,9 +44,9 @@ sleep 2 && conky &
 xinput set-prop 11 "libinput Click Method Enabled" 0 1
 
 # screen locker
-exec xautolock -time 15 -locker ~/bin/lockscreen.sh &
+#exec xautolock -time 15 -locker ~/bin/lockscreen.sh &
 
-# ensures the screen locks after suspend (xautolock alone won't)
+# locks the screen after screen saver timeout or suspend
 xss-lock -- ${HOME}/bin/i3lock-fancy-rapid 10 1 &
 
 # notify me about updates

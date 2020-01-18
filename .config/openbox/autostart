@@ -5,6 +5,9 @@ if which dbus-launch >/dev/null && test -z "${DBUS_SESSION_BUS_ADDRESS}"; then
   eval $(dbus-launch --sh-syntax --exit-with-session)
 fi
 
+# compton breaks if we run it on kvm
+chassistype=$(hostnamectl status | grep Chassis | awk '{ print $2 }')
+
 # without this, I get errors using lxsession-logout
 lxpolkit &
 
@@ -16,22 +19,24 @@ lxpolkit &
 #nitrogen --restore &
 
 # THIS NEEDS WORK
-xrandr -q | grep -q ^DP-2-1
-if [ $? -eq 0 ]; then
-  ${HOME}/bin/dock.sh
-fi
+dock.sh &
 
 # launch pcmanfm in daemon mode
 pcmanfm -d &
 
 # compositor for tear-free windows and some basic effects
-compton -b
+if [ "${chassistype}" != "vm" ]; then
+  compton -b
+fi
 
 # a status bar with icons/time
 tint2 &
 
 # launch conky, but with a delay to give the screens some time to come up
-sleep 2 && conky &
+pidof conky 2>&1
+if [ $? -eq 1 ]; then
+  sleep 2 && conky &
+fi
 
 # prompt for SSH passphrase, if key exists
 (test -f $HOME/.ssh/id_rsa && ssh-add) &
@@ -47,7 +52,7 @@ xinput set-prop 11 "libinput Click Method Enabled" 0 1
 #exec xautolock -time 15 -locker ~/bin/lockscreen.sh &
 
 # locks the screen after screen saver timeout or suspend
-xss-lock -- ${HOME}/bin/i3lock-fancy-rapid 10 1 &
+xss-lock -- lockscreen.sh
 
 # notify me about updates
 dnfdragora-updater &

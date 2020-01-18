@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# tell the user that this needs to be run and push a notification!
+DEVICES=$(xrandr -q | grep -w connected | wc -l)
+if [ ${DEVICES} -gt 1 ]; then
+  notify-send -u critical "Please adjust ${HOME}/bin/dock.sh to meet your needs."
+fi
+
+exit 0
+
 # this probably needs adjusting. It's going to be different at home vs at work.
 # one thought I had was to make it look at what wifi network I'm connected to, in order to make the determination.
 

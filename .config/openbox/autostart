@@ -52,7 +52,7 @@ xinput set-prop 11 "libinput Click Method Enabled" 0 1
 #exec xautolock -time 15 -locker ~/bin/lockscreen.sh &
 
 # locks the screen after screen saver timeout or suspend
-xss-lock -- lockscreen.sh
+xss-lock -- lockscreen.sh &
 
 # notify me about updates
 dnfdragora-updater &

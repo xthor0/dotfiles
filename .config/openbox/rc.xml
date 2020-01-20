@@ -468,6 +468,11 @@
         <x>0</x><y>0</y>
       </action>
     </keybind>
+    <keybind key="W-n">
+      <action name="MoveResizeTo">
+        <monitor>next</monitor>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>8</dragThreshold>

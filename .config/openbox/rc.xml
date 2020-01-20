@@ -426,7 +426,7 @@
         <menu>root-menu</menu>
       </action>
     </keybind>
-    <!-- docking and undocking, I imagine this will need adjusting! -->
+    <!-- docking and undocking -->
     <keybind key="C-S-u">
       <action name="Execute">
         <command>~/bin/undock.sh</command>
@@ -445,15 +445,29 @@
     <keybind key="W-Right">    	# HalfRightScreen
   	  <action name="UnmaximizeFull"/>
   	    <action name="MoveResizeTo"><x>-0</x><y>0</y><height>100%</height><width>50%</width></action>
-	</keybind>
+	  </keybind>
     <keybind key="W-Up">    	# HalfUpperScreen
   	  <action name="UnmaximizeFull"/>
   	  <action name="MoveResizeTo"><x>0</x><y>0</y><width>100%</width><height>50%</height></action>
-	</keybind>
+	  </keybind>
     <keybind key="W-Down">    	# HalfLowerScreen
   	  <action name="UnmaximizeFull"/>
   	  <action name="MoveResizeTo"><x>0</x><y>-0</y><width>100%</width><height>50%</height></action>
-	</keybind>
+	  </keybind>
+    <!-- helps move windows back to a visible workspace after undock -->
+    <keybind key="W-F10">
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+      </action>
+    </keybind>
+    <keybind key="W-F11">
+      <action name="MoveResizeTo">
+        <width>1000</width>
+        <height>700</height>
+        <x>0</x><y>0</y>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>8</dragThreshold>
